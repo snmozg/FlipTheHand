@@ -9,5 +9,22 @@
         android:id="@+id/menuFragment"
         android:name="com.sozge.flipthehand.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_pcFragment"
+            app:destination="@id/pcFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_otherFragment"
+            app:destination="@id/otherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pcFragment"
+        android:name="com.sozge.flipthehand.PcFragment"
+        android:label="fragment_pc"
+        tools:layout="@layout/fragment_pc" />
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="com.sozge.flipthehand.OtherFragment"
+        android:label="fragment_other"
+        tools:layout="@layout/fragment_other" />
 </navigation>

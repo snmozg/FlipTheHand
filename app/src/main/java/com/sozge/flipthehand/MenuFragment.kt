@@ -1,10 +1,14 @@
 package com.sozge.flipthehand
 
+import android.graphics.Path
+import android.icu.text.RelativeDateTimeFormatter.Direction
 import android.os.Bundle
+import android.text.Layout.Directions
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.sozge.flipthehand.databinding.FragmentMenuBinding
 
 
@@ -34,10 +38,13 @@ class MenuFragment : Fragment() {
     }
 
     private fun buttonOtherClicked(view: View) {
-
+        val action = MenuFragmentDirections.actionMenuFragmentToOtherFragment()
+        Navigation.findNavController(requireView()).navigate(action)
     }
 
     private fun buttonPcClicked(view: View) {
+        val action = MenuFragmentDirections.actionMenuFragmentToPcFragment()
+        Navigation.findNavController(requireView()).navigate(action)
 
     }
 }
