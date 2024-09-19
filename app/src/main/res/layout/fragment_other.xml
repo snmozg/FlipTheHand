@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/otherRockButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -27,7 +27,7 @@
             android:text="ROCK" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/otherPaperButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -37,7 +37,7 @@
             android:text="PAPER" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/otherScissorButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -75,7 +75,7 @@
 
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/rockButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -85,7 +85,7 @@
             android:text="ROCK" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/paperButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -95,7 +95,7 @@
             android:text="PAPER" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/scissorButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -203,7 +203,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:rotation="180"
-        android:src="@drawable/rock"
+        tools:src="@drawable/rock"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,8 +213,7 @@
         android:id="@+id/ivIconP2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-
-        android:src="@drawable/paper"
+        tools:src="@drawable/paper"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -226,7 +225,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:rotation="180"
-        android:text="Ready"
+        android:text="Ready?"
         android:textColor="@color/color"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -241,7 +240,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginBottom="96dp"
-        android:text="Ready"
+        android:text="Ready?"
         android:textColor="@color/color"
         android:textSize="22sp"
         android:textStyle="bold"
