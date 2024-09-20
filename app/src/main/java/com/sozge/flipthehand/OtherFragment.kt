@@ -1,5 +1,7 @@
 package com.sozge.flipthehand
 
+import android.app.Dialog
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -7,6 +9,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.Navigation
 import com.sozge.flipthehand.databinding.FragmentOtherBinding
 
 
@@ -17,6 +23,9 @@ class OtherFragment : Fragment() {
     private var animation1 : AnimationDrawable? = null
     private var animation2 : AnimationDrawable? = null
     private var setTime : CountDownTimer? = null
+
+    private var playerName1 = "Player1"
+    private var playerName2 = "Player2"
 
 
     private var player1Ready = false
@@ -64,6 +73,7 @@ class OtherFragment : Fragment() {
         binding.scissorButton.setOnClickListener{
             onPlayP2("scissor")
         }
+        getPlayersName()
     }
 
     private fun playAnimation()
@@ -73,6 +83,7 @@ class OtherFragment : Fragment() {
         binding.ivIconP2.setImageResource(0)
         binding.P1Status.text=""
         binding.P2Status.text=""
+
         binding.ivIconP1.setBackgroundResource(R.drawable.animation)
         animation1= binding.ivIconP1.background as AnimationDrawable
 
@@ -97,6 +108,7 @@ class OtherFragment : Fragment() {
 
                 setSelectedIcon()
                 setScore()
+                endGame()
             }
         }.start()
     }
@@ -110,8 +122,8 @@ class OtherFragment : Fragment() {
             player1Ready= true
 
             if (player2Ready){
+                allowPlaying = false
                 playAnimation()
-
             }
         }
     }
@@ -125,8 +137,8 @@ class OtherFragment : Fragment() {
             player2Ready= true
 
             if (player1Ready){
+                allowPlaying = false
                 playAnimation()
-
             }
         }
     }
@@ -183,9 +195,47 @@ class OtherFragment : Fragment() {
         }
     }
 
+    private fun getPlayersName() {
+        val nameDialog = Dialog(requireContext())
+        nameDialog.setContentView(R.layout.player_name_dialog)
+        nameDialog.findViewById<Button>(R.id.startButton).setOnClickListener{
+            val name1 = nameDialog.findViewById<EditText>(R.id.et_name1).text
+            val name2 = nameDialog.findViewById<EditText>(R.id.et_name2).text
+
+
+            if(name1.isNotEmpty() && name2.isNotEmpty())
+
+            {
+                playerName1 = name1.toString()
+                playerName2 = name2.toString()
+                binding.textView.text = playerName1
+                binding.textView2.text = playerName2
+                nameDialog.cancel()
+
+            }
+            else
+            {
+                Toast.makeText(requireContext(),"enter both players name.",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    nameDialog.show()
+
+    }
+
+    private fun endGame(){
+        if(scoreP1==3 || scoreP2==3)
+        {
+            val action = OtherFragmentDirections.actionOtherFragmentToFinishFragment()
+            Navigation.findNavController(requireView()).navigate(action)
+
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        setTime = null
     }
 }
 

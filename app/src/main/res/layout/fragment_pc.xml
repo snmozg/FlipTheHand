@@ -4,7 +4,233 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PcFragment">
+    tools:context=".PcFragment"
+    android:padding="10dp">
+
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="@color/color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/rockButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color"
+            android:padding="10dp"
+            android:text="ROCK" />
+
+        <Button
+            android:id="@+id/paperButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color"
+            android:padding="10dp"
+            android:text="PAPER" />
+
+        <Button
+            android:id="@+id/scissorButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color"
+            android:padding="10dp"
+            android:text="SCISSORS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <ImageView
+            android:id="@+id/P1s1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="1dp"
+            android:src="@drawable/star"></ImageView>
+
+        <ImageView
+            android:id="@+id/P1s2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="1dp"
+            android:src="@drawable/star"></ImageView>
+
+        <ImageView
+            android:id="@+id/P1s3"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:padding="1dp"
+            android:src="@drawable/star"></ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:textColor="@color/color"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="294dp">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivIconP1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="72dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear"
+        app:layout_constraintVertical_bias="1.0"
+        tools:src="@drawable/rock"></ImageView>
+
+    <ImageView
+        android:id="@+id/ivIconP2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:src="@drawable/paper"></ImageView>
+
+    <TextView
+        android:id="@+id/P1Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:text="Ready?"
+        android:textColor="@color/color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivIconP1"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/ivIconP1"></TextView>
+
+    <TextView
+        android:id="@+id/P2Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Ready?"
+        android:textColor="@color/color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivIconP2"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/ivIconP2" />
+
+    <TextView
+        android:id="@+id/compText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Computer"
+        android:textSize="20sp"
+        android:textColor="@color/color"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/ivIconP1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="266dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/P2s3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="1dp"
+            android:src="@drawable/star"
+            tools:layout_editor_absoluteX="208dp"
+            tools:layout_editor_absoluteY="44dp"></ImageView>
+
+        <ImageView
+            android:id="@+id/P2s2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="1dp"
+            android:src="@drawable/star"
+            tools:layout_editor_absoluteX="174dp"
+            tools:layout_editor_absoluteY="40dp"></ImageView>
+
+        <ImageView
+            android:id="@+id/P2s1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="1dp"
+            android:src="@drawable/star"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="39dp"></ImageView>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
